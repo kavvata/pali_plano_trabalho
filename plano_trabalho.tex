@@ -1,3 +1,4 @@
+%! TeX program = lualatex
 \documentclass[
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
@@ -13,7 +14,7 @@
 	english,			% idioma adicional para hifenização
 	french,				% idioma adicional para hifenização
 	spanish,			% idioma adicional para hifenização
-	brazil,				% o último idioma é o principal do documento
+	brazilian,				% o último idioma é o principal do documento
 	]{abntex2}
 
 % ---
@@ -23,20 +24,20 @@
 % ---
 % Pacotes fundamentais 
 % ---
-\usepackage{lmodern}			% Usa a fonte Latin Modern
 \usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
 \usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
-% ---
+\usepackage{fontspec}
+\setmainfont{Arial}
 
 % ---
 % Pacotes de citações
 % ---
 \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
-\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+\usepackage[alf]{abntex2cite}
 
 
 % ---
@@ -59,8 +60,10 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-  \titulo{Desenvolvimento de sistema para registro de comunidades biológicas marinhas}
+  \titulo{Desenvolvimento de sistema para registro de comunidades biológicas marinhas e estuarinas}
 \autor{Gabriel Kavata Leandro}
+\orientador{Guilherme Corredato Guerino}
+\coorientador{} % Pablo Damian Borges Guilherme
 \local{Brasil}
 \data{2026}
 \instituicao{%
@@ -69,11 +72,8 @@
   Programa de Pós-Gradução em Ambientes Litoraneos e Insulares}
 \tipotrabalho{Plano de trabalho (Mestrado)}
 \preambulo{Plano de trabalho apresentado ao Programa de Pós-Gradução em Ambientes Litoraneose Insulares, como requisito de ingresso ao curso de mestrado.}
-% ---
-% ---
-% Configurações de aparência do PDF final
 
-% alterando o aspecto da cor azul
+% Alterando o aspecto da cor azul
 \definecolor{blue}{RGB}{41,5,195}
 
 % informações do PDF
@@ -104,71 +104,47 @@
 
 % Controle do espaçamento entre um parágrafo e outro:
 \setlength{\parskip}{0.2cm}  % tente também \onelineskip
-
-% ---
-% compila o indice
-% ---
-\makeindex
 % ---
 
-% ----
 % Início do documento
 % ----
 \begin{document}
-% Seleciona o idioma do documento (conforme pacotes do babel)
-%\selectlanguage{english}
-\selectlanguage{brazil}
-
-% Retira espaço extra obsoleto entre as frases.
+\selectlanguage{brazilian}
 \frenchspacing 
 
 % ----------------------------------------------------------
-% ELEMENTOS PRÉ-TEXTUAIS
-% ----------------------------------------------------------
-% \pretextual
-
-% ---
-% Capa
-% ---
-\imprimircapa
-% ---
-% Folha de rosto
-% ---
-\imprimirfolhaderosto
-% ---
-% NOTA DA ABNT NBR 15287:2011, p. 4:
-%  ``Se exigido pela entidade, apresentar os dados curriculares do autor em
-%     folha ou página distinta após a folha de rosto.''
-% ---
-
-
-% ---
-% inserir o sumario
-% ---
-\pdfbookmark[0]{\contentsname}{toc}
-\tableofcontents*
-\cleardoublepage
-% ---
-
-
 % ----------------------------------------------------------
 % ELEMENTOS TEXTUAIS
 % ----------------------------------------------------------
+
 \textual
 
 \chapter{Plano de Trabalho}
 
+\noindent \textbf{Título da pesquisa}: \imprimirtitulo
+
+\noindent \textbf{Nome do Candidato}: \imprimirautor
+
+\noindent \textbf{Nome do Orientador 1}: \imprimirorientador
+
+\noindent \textbf{Nome do Orientador 2}: \imprimircoorientador
+
 \section{Introdução}
+
+As comunidades biológicas são conjuntos de todas as populações de diferentes espécies de plantas, animais e microrganismos vivendo e interagindo em uma área \cite[p.~39]{miller_ciencia_2021}. Trata-se de um elemento central da ecologia, essencial para compreender a formação, a manutenção e as consequências da diversidade biológica dos ecossistemas \cite[p.~3]{morin_community_2011}. Essa compreensão fornece a base para entender como esses processos influenciam, por extensão, populações humanas \cite[p.~4]{morin_community_2011}. Por exemplo, <Exemplo no CEP>.
+
+<Introdução ao CEP>. <Importância do CEP>. <Exemplos de pesquisas com comunidades biológicas no CEP>.
+
+
+
+\section{Objetivo}
+O presente trabalho tem por objetivo a construção e aplicação de um sistema para registro de comunidades biológicas marinhas e estuarinas, visando investigar a eficácia do sistema em agilizar o processo de coleta e pesquisa dessas comunidades.
+\section{Metodologia}
+A fazer
+\section{Cronograma}
 A fazer
 
-\section{Objetivos}
-A fazer
-\section{Hipóteses}
-A fazer
-\section{Objeto de Estudo}
-A fazer
-\section{Máteriais e Métodos}
-A fazer
-\section{Resultados Esperados}
-A fazer
+\cleardoublepage
+
+\bibliography{plano_trabalho}
 \end{document}
