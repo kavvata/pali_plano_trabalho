@@ -60,7 +60,7 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-  \titulo{Desenvolvimento de sistema para registro de comunidades biológicas marinhas e estuarinas}
+  \titulo{Desenvolvimento de sistema para registro de comunidades ecológicas marinhas e estuarinas}
 \autor{Gabriel Kavata Leandro}
 \orientador{Guilherme Corredato Guerino}
 \coorientador{} % Pablo Damian Borges Guilherme
@@ -94,6 +94,24 @@
 }
 \makeatother
 % --- 
+% ---
+% Possibilita criação de Quadros e Lista de quadros.
+% Ver https://github.com/abntex/abntex2/issues/176
+%
+\newcommand{\quadroname}{Quadro}
+\newcommand{\listofquadrosname}{Lista de quadros}
+
+\newfloat[chapter]{quadro}{loq}{\quadroname}
+\newlistof{listofquadros}{loq}{\listofquadrosname}
+\newlistentry{quadro}{loq}{0}
+
+% configurações para atender às regras da ABNT
+\setfloatadjustment{quadro}{\centering}
+\counterwithout{quadro}{chapter}
+\renewcommand{\cftquadroname}{\quadroname\space} 
+\renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
+
+\setfloatlocations{quadro}{hbtp} % Ver https://github.com/abntex/abntex2/issues/176
 
 % --- 
 % Espaçamentos entre linhas e parágrafos 
@@ -131,18 +149,38 @@
 
 \section{Introdução}
 
-As comunidades biológicas são conjuntos de todas as populações de diferentes espécies de plantas, animais e microrganismos vivendo e interagindo em uma área \cite[p.~39]{miller_ciencia_2021}. Trata-se de um elemento central da ecologia, essencial para compreender a formação, a manutenção e as consequências da diversidade biológica dos ecossistemas \cite[p.~3]{morin_community_2011}. Essa compreensão fornece a base para entender como esses processos influenciam, por extensão, populações humanas \cite[p.~4]{morin_community_2011}. Por exemplo, <Exemplo no CEP>.
+As comunidades ecológicas são conjuntos de todas as populações de diferentes espécies de plantas, animais e microrganismos vivendo e interagindo em uma área \cite[p.~39]{miller_ciencia_2021}. Trata-se de um elemento central da ecologia, essencial para compreender a formação, a manutenção e as consequências da diversidade biológica dos ecossistemas \cite[p.~3]{morin_community_2011}. Essa compreensão fornece a base para entender como esses processos influenciam, por extensão, populações humanas \cite[p.~4]{morin_community_2011}. Por exemplo, <Exemplo no CEP>.
 
-<Introdução ao CEP>. <Importância do CEP>. <Exemplos de pesquisas com comunidades biológicas no CEP>.
+<Introdução ao CEP>. <Importância do CEP>. <Exemplos de pesquisas com comunidades ecológicas no CEP>.
 
 
 
 \section{Objetivo}
-O presente trabalho tem por objetivo a construção e aplicação de um sistema para registro de comunidades biológicas marinhas e estuarinas, visando investigar a eficácia do sistema em agilizar o processo de coleta e pesquisa dessas comunidades.
+O trabalho proposto tem por objetivo geral o desenvolvimento de um sistema para registro de comunidades ecológicas marinhas e estuarinas, visando investigar a eficácia do sistema em agilizar o processo de coleta e pesquisa dessas comunidades. Dessa forma, os objetivos específicos são:
+\begin{itemize}
+\item Realizar entrevistas com pesquisadores de comunidades relacionadas ao trabalho proposto;
+\item Levantar requisitos funcionais e não funcionais para desenvolvimento do sistema;
+\item Coletar dados de eficiência dos métodos de triagem e identificação de táxons antes do uso do sistema;
+\item Desenvolver um sistema para registro de comunidades ecológicas marinhas e estuarinas.
+\item Coletar dados de eficiência dos métodos de triagem e identificação de táxons durante o uso do sistema;
+\end{itemize}
 \section{Metodologia}
 A fazer
 \section{Cronograma}
 A fazer
+\begin{quadro}
+\caption{\label{quadro_exemplo}Cronograma de atividades}
+\begin{tabular}{|c|c|c|c|c|}
+	\hline
+  \textbf{Atividade} & \textbf{2027.1} & \textbf{2027.2} & \textbf{2028.1} & \textbf{2028.2} \\ \hline
+	...    & ...   & ...  & ...  & ... \\ \hline
+	...    & ...   & ...  & ...  & ... \\ \hline
+	...    & ...   & ...  & ...  & ... \\ \hline
+	...    & ...   & ...  & ...  & ... \\ \hline
+	...    & ...   & ...  & ...  & ... \\ \hline
+\end{tabular}
+\fonte{Autor.}
+\end{quadro}
 
 \cleardoublepage
 
