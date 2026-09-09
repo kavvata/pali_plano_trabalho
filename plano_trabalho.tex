@@ -43,18 +43,11 @@
 % ---
 % Configurações do pacote backref
 % Usado sem a opção hyperpageref de backref
-\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+\renewcommand{\backrefpagesname}{}
 % Texto padrão antes do número das páginas
 \renewcommand{\backref}{}
 % Define os textos da citação
-\renewcommand*{\backrefalt}[4]{
-	\ifcase #1 %
-		Nenhuma citação no texto.%
-	\or
-		Citado na página #2.%
-	\else
-		Citado #1 vezes nas páginas #2.%
-	\fi}%
+\renewcommand*{\backrefalt}[4]{}
 % ---
 
 % ---
@@ -63,7 +56,7 @@
   \titulo{Desenvolvimento de sistema para registro de comunidades ecológicas marinhas e estuarinas}
 \autor{Gabriel Kavata Leandro}
 \orientador{Guilherme Corredato Guerino}
-\coorientador{} % Pablo Damian Borges Guilherme
+\coorientador{} % Pablo Damian Borges Guilherme ?
 \local{Brasil}
 \data{2026}
 \instituicao{%
@@ -151,9 +144,7 @@
 
 As comunidades ecológicas são conjuntos de todas as populações de diferentes espécies de plantas, animais e microrganismos vivendo e interagindo em uma área \cite[p.~39]{miller_ciencia_2021}. O estudo de comunidades ecológicas é um elemento central da ecologia, essencial para compreender a formação, a manutenção e as consequências da diversidade biológica dos ecossistemas \cite[p.~3]{morin_community_2011}. Essa compreensão fornece a base para entender como esses processos influenciam populações humanas \cite[p.~4]{morin_community_2011}. Nesse contexto, \citeonline[p.~231--232]{whitfield_fishes_2002} argumentam que o estudo de comunidades permite mensurar o impacto das ações antrópicas aos estuários. Por exemplo, em um estudo realizado por \citeonline{angeli_arsenic_2013}, foi detectado a presença de metais pesados em peixes no Complexo Estuarino de Paranaguá (CEP). Em outro estudo conduzido por \citeonline{liebezeit_ddt_2011}, concentrações consideráveis do inseticida diclorodifeniltricloroetano (DDT) também foram encontradas em peixes, esponjas e bivalves do CEP.
 
-O Complexo Estuarino de Paranaguá (CEP) é localizado no litoral do Paraná e composto pelas baías de Paranaguá, Antonina e Laranjeiras.
-
-
+O Complexo Estuarino de Paranaguá (CEP) é localizado no litoral do Paraná e composto pelas baías de Paranaguá, Antonina e Laranjeiras. Esse complexo estuarino é cenário para diferentes atividades antrópicas  -- como a pesca, o turismo e a industria portuária -- ao mesmo tempo que abriga regiões de grande riqueza biológica, que encontram-se extremamente ameaçadas \cite{miura_mapping_2020}.
 
 
 \section{Objetivo}
