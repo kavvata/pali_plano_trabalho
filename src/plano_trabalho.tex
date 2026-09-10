@@ -34,6 +34,14 @@
 \setmainfont{Arial}
 \setsansfont{Arial}
 
+% Regras da ABNT — títulos em 12pt (normalsize deste documento), negrito
+\renewcommand{\ABNTEXchapterfont}{\sffamily\bfseries}
+\renewcommand{\ABNTEXpartfont}{\ABNTEXchapterfont}
+\renewcommand{\ABNTEXchapterfontsize}{\normalsize}
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+
 % ---
 % Pacotes de citações
 % ---
@@ -116,6 +124,10 @@
 
 % Controle do espaçamento entre um parágrafo e outro:
 \setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% Espaçamento após o título de capítulo igual ao de seção (parskip)
+\setlength{\afterchapskip}{\parskip}
+\setlength{\beforechapskip}{\parskip}
 % ---
 
 % Início do documento
