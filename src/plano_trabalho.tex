@@ -2,14 +2,13 @@
 \documentclass[
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
-	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
 	twoside,			% para impressão em recto e verso. Oposto a oneside
 	a4paper,			% tamanho do papel. 
 	% -- opções da classe abntex2 --
-	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
-	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
-	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
-	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
 	% -- opções do pacote babel --
 	english,			% idioma adicional para hifenização
 	french,				% idioma adicional para hifenização
@@ -41,6 +40,14 @@
 \renewcommand{\ABNTEXsectionfontsize}{\normalsize}
 \renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
 \renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+
+% ---
+% Cabecalhos: apenas o número da página, sem o risco separador
+% (baseado no estilo do abntex2, removendo o marcador de capítulo/seção)
+% ---
+\makeevenhead{abntheadings}{\ABNTEXfontereduzida\thepage}{}{}
+\makeoddhead{abntheadings}{}{}{\ABNTEXfontereduzida\thepage}
+\makeheadrule{abntheadings}{0pt}{0pt} % remove o risco abaixo do cabeçalho
 
 % ---
 % Pacotes de citações
