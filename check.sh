@@ -117,6 +117,13 @@ has 'marin|estuar'             && c10=$((c10+1))
 SCORE=$((SCORE+c10))
 (( c10==2 )) && ok "C10 alinhamento IHC + marinho/estuarino (2)" || ko "C10 alinhamento: $c10/2"
 
+# ---- C11 (gate, sem pontuação): ética em Etapa 1 (consentimento) ----
+if printf '%s\n' "$SECTION" | grep -E '^\(1\) ' | grep -qi 'consentimento'; then
+  ok "C11 ética (consentimento) presente em Etapa 1"
+else
+  ko "C11 ética (consentimento) ausente em Etapa 1 [HARD]"; HARD_FAIL=1
+fi
+
 echo "----------------------------------------"
 echo "SCORE: $SCORE"
 echo "detail: $SCORE/25 | hard_fail=$HARD_FAIL"
