@@ -38,12 +38,11 @@ linha de pesquisa, and the orientador's areas.
    descritiva (comparação antes/depois); procedimentos → estudo de campo com métodos
    mistos (entrevistas qualitativas + medições quantitativas pré/pós), conduzido sob o
    referencial da IHC. Keep the draft's core wording where it is good.
-2. **Passo a passo (vale 6% — o ponto principal)** — exactly 6 etapas (estilo definido pelo
-   operador na iteração 4, substituindo os marcadores `\textbf{Etapa N -- ...}`): a frase de
-   introdução termina com a enumeração `(1) Empatia; (2) Definição; (3) Linha de base;
-   (4) Ideação e prototipação; (5) Teste; (6) Análise dos dados.` e cada etapa = um parágrafo
-   iniciado por `(1)` … `(6)` + nome + ponto. NÃO usar `(N) ` no início de nenhum outro
-   parágrafo da seção (quebra o checker). Cada parágrafo de etapa deve declarar: (i) purpose,
+2. **Passo a passo (vale 6% — o ponto principal)** — exactly 6 etapas em ambiente LaTeX
+   `enumerate` (estilo do operador, iterações 4 e 7): logo após a frase de introdução
+   ("...em seis etapas, detalhadas na sequência."), um único `\begin{enumerate}` com um
+   `\item Nome. ...` por etapa. Nenhum outro `\item` na seção (quebra o checker). Cada item
+   de etapa deve declarar: (i) purpose,
    (ii) actors (quem faz o quê), (iii) técnicas/instrumentos, (iv) output/artifact produced.
    - Etapa 1 -- Empatia: entrevistas semiestruturadas com pesquisadores de comunidades
      bentônicas (grupo de pesquisa UNESPAR), amostragem de conveniência, registro e
@@ -108,7 +107,7 @@ linha de pesquisa, and the orientador's areas.
 ## Check script
 `./check.sh` (run from project root) → prints `SCORE: <n>` (max 25); exit 0 = criteria met
 (all hard gates pass AND n ≥ 23).
-- Hard gates: compiles · no undefined refs · ≥5 paragraph starters `(N) ` · all citation keys resolve.
+- Hard gates: compiles · no undefined refs · ≥5 `\item` (enumeração de etapas) · all citation keys resolve · consentimento no 1º item.
 - Sub-scores: classificação 2 · fases DT 3 · etapas 4 · volume 3 · instrumentos (NASA-TLX,
   ISO 9241, estatística pareada) 3 · citações válidas 2 · objetivos específicos 2 ·
   alinhamento IHC/litorâneo 2 · compila 2 · refs 2.

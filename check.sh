@@ -61,8 +61,8 @@ else s4=0; fi
 SCORE=$((SCORE+s4))
 (( n4==5 )) && ok "C4 fases DT 5/5 ($s4)" || ko "C4 fases DT $n4/5 ($s4/3)"
 
-# ---- C5 (4): marcadores explícitos de etapa (parágrafos iniciados por "(N) ") — HARD: >=5 ----
-STEPS=$(printf '%s\n' "$SECTION" | grep -cE '^\([0-9]\) ')
+# ---- C5 (4): enumeração explícita de etapas (\item) — HARD: >=5 ----
+STEPS=$(printf '%s\n' "$SECTION" | grep -cE '^\\item ')
 if   (( STEPS>=5 )); then s5=4
 elif (( STEPS==4 )); then s5=3
 elif (( STEPS==3 )); then s5=2
@@ -70,7 +70,7 @@ elif (( STEPS==2 )); then s5=1
 else s5=0; fi
 SCORE=$((SCORE+s5))
 if (( STEPS>=5 )); then ok "C5 passo a passo: $STEPS etapas ($s5/4)"
-else ko "C5 passo a passo: $STEPS etapas ($s5/4) — hard gate: >=5 parágrafos iniciados por '(N)'"; HARD_FAIL=1; fi
+else ko "C5 passo a passo: $STEPS etapas ($s5/4) — hard gate: >=5 \item na enumeração"; HARD_FAIL=1; fi
 
 # ---- C6 (3): volume da seção (palavras, comandos LaTeX removidos) ----
 WORDS=$(printf '%s\n' "$SECTION" | sed -e 's/\\cite[a-zA-Z]*{[^}]*}//g' -e 's/\\[a-zA-Z]\+//g' | wc -w)
@@ -118,7 +118,7 @@ SCORE=$((SCORE+c10))
 (( c10==2 )) && ok "C10 alinhamento IHC + marinho/estuarino (2)" || ko "C10 alinhamento: $c10/2"
 
 # ---- C11 (gate, sem pontuação): ética em Etapa 1 (consentimento) ----
-if printf '%s\n' "$SECTION" | grep -E '^\(1\) ' | grep -qi 'consentimento'; then
+if printf '%s\n' "$SECTION" | awk '/^\\item /{n++} n==1' | grep -qi 'consentimento'; then
   ok "C11 ética (consentimento) presente em Etapa 1"
 else
   ko "C11 ética (consentimento) ausente em Etapa 1 [HARD]"; HARD_FAIL=1
