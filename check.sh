@@ -61,8 +61,8 @@ else s4=0; fi
 SCORE=$((SCORE+s4))
 (( n4==5 )) && ok "C4 fases DT 5/5 ($s4)" || ko "C4 fases DT $n4/5 ($s4/3)"
 
-# ---- C5 (4): marcadores explícitos de etapa — HARD: >=5 ----
-STEPS=$(printf '%s\n' "$SECTION" | grep -oiE 'Etapa [0-9]+' | wc -l)
+# ---- C5 (4): marcadores explícitos de etapa (parágrafos iniciados por "(N) ") — HARD: >=5 ----
+STEPS=$(printf '%s\n' "$SECTION" | grep -cE '^\([0-9]\) ')
 if   (( STEPS>=5 )); then s5=4
 elif (( STEPS==4 )); then s5=3
 elif (( STEPS==3 )); then s5=2
@@ -70,7 +70,7 @@ elif (( STEPS==2 )); then s5=1
 else s5=0; fi
 SCORE=$((SCORE+s5))
 if (( STEPS>=5 )); then ok "C5 passo a passo: $STEPS etapas ($s5/4)"
-else ko "C5 passo a passo: $STEPS etapas ($s5/4) — hard gate: >=5 marcadores 'Etapa <n>'"; HARD_FAIL=1; fi
+else ko "C5 passo a passo: $STEPS etapas ($s5/4) — hard gate: >=5 parágrafos iniciados por '(N)'"; HARD_FAIL=1; fi
 
 # ---- C6 (3): volume da seção (palavras, comandos LaTeX removidos) ----
 WORDS=$(printf '%s\n' "$SECTION" | sed -e 's/\\cite[a-zA-Z]*{[^}]*}//g' -e 's/\\[a-zA-Z]\+//g' | wc -w)
