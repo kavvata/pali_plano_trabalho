@@ -185,17 +185,11 @@ Nessa mesma direção, \citeonline{strasser_promoting_2011} argumenta que o proc
 Frente a esse cenário, a Interação Humano-Computador (IHC) oferece o referencial adequado para orientar o desenvolvimento de um sistema que se ajuste ao fluxo de trabalho já existente do pesquisador, em vez de impor um modelo genérico de gestão de dados alheio a essa prática \cite{silva_interacao_2010}.
 Dentro desse referencial, o \textit{Design Thinking} (DT) constitui um processo iterativo e centrado no usuário, estruturado nas fases de empatia, definição, ideação, prototipação e teste, voltado à concepção de soluções ajustadas a problemas complexos e mal definidos \cite{brown_design_2021}. Essa condição caracteriza justamente o cenário descrito por \citeonline{marinoni_colecoes_2025}, em que a ausência de sistemas de gestão não decorre da inexistência de soluções de software, mas de sua inadequação ao trabalho real do pesquisador.
 
-TODO: personas mapa de empatia e POV
+Para que a solução projetada se ajuste a esse trabalho real, utilizam-se duas técnicas complementares e sequenciais de representação do usuário na estrutura do DT \cite{siricharoen_using_2021}: o mapa de empatia, produzido na fase de empatia, organiza os dados da pesquisa em torno do que o usuário pensa, sente, vê, ouve e faz, permitindo compreender sua experiência e suas intenções para além do registro de comportamentos; e a persona, que na fase de definição consolida essas evidências em um perfil arquetípico construído a partir de dados empíricos, tratando o usuário como uma personagem coerente -- e não como um conjunto de especificações --, o que facilita a comunicação das decisões de design. Dessas evidências, a definição converge para o Point of View (POV): uma formulação estruturada do problema que articula a descrição do usuário, a necessidade identificada, a razão subjacente e o critério de sucesso -- muitas vezes não explicitada -- que torna essa necessidade relevante \cite{rodriguez_point_2019}. O POV evita a generalidade de um problema mal definido e a especificidade prematura de uma solução, delimitando o espaço de ideação de soluções \cite{rodriguez_point_2019}.
 
-Para que a solução projetada se ajuste a esse trabalho real, utilizam-se duas técnicas de representação do usuário: as personas e o mapa de empatia \cite{siricharoen_using_2021}. O mapa de empatia organiza os dados da pesquisa em torno do que o usuário pensa, sente, vê, ouve e faz, permitindo compreender sua experiência e suas intenções para além do registro de comportamentos. A persona, por sua vez, consolida essas evidências em um perfil arquetípico construído a partir de dados empíricos, tratando o usuário como uma personagem coerente -- e não como um conjunto de especificações --, o que facilita a comunicação das decisões de design. Os dois conceitos são complementares e sequenciais na estrutura do DT: o mapa de empatia, produzido na fase de empatia, fornece as evidências que a fase de definição consolida na persona \cite{siricharoen_using_2021}. 
+A análise temática constitui um método para identificar, analisar e relatar padrões -- ou temas -- dentro de um conjunto de dados qualitativos, sendo suficientemente flexível para ser aplicado a diferentes tamanhos de amostra, referenciais teóricos e tipos de pergunta de pesquisa \cite{braun_using_2006}. Tal método organiza-se em fases recursivas, e não estritamente lineares: familiarização com os dados, geração de códigos iniciais, busca por temas a partir do agrupamento de códigos relacionados, revisão dos temas quanto à sua coerência interna e à distinção em relação aos demais, definição e nomeação de cada tema, e, por fim, produção do relatório analítico \cite{braun_using_2006}. Nesse processo, os temas emergem tanto do conteúdo das entrevistas quanto das questões que orientam a pesquisa, fornecendo a base empírica para as etapas subsequentes de definição do usuário e do problema.
 
-Dessas evidências, a definição converge ainda para o Point of View (POV), formulação estruturada do problema que articula a descrição do usuário, a necessidade identificada e o insight -- a razão subjacente, muitas vezes não explicitada, que torna essa necessidade relevante \cite{rodriguez_point_2019}. Ao articular esses três elementos, o POV evita tanto a generalidade de um problema mal definido quanto a especificidade prematura de uma solução, delimitando o espaço de ideação da etapa seguinte.
-
-TODO: Análise Temática e Ontologia
-
-TODO: Engenharia de software, requisitos funcionais e nao funcionais
-
-Ao converter o problema delimitado em decisões de engenharia, define-se a especificação de requisitos do sistema \cite{sommerville_software_2016}. Os requisitos funcionais especificam os serviços que o sistema deve oferecer e seu comportamento frente a eventos externos -- aqui, o registro de comunidades ecológicas, a triagem e a identificação de táxons e a gestão dos dados a eles associados. Os requisitos não funcionais, por sua vez, estabelecem as restrições e os atributos de qualidade que a solução deve satisfazer -- desempenho, usabilidade, confiabilidade e manutenibilidade --, sendo tão determinantes quanto os funcionais para que o sistema se ajuste ao fluxo de trabalho do pesquisador. O produto dessa atividade é o documento de especificação de requisitos, referência para o projeto, o desenvolvimento e a aceitação do sistema.
+Ao converter o problema delimitado em decisões de engenharia, define-se a especificação de requisitos do sistema. Segundo \citeonline{sommerville_software_2016}, os requisitos funcionais especificam os serviços que o sistema deve oferecer e seu comportamento frente a eventos externos -- aqui, a gestão dos dados de comunidades ecológicas. Os requisitos não funcionais, por sua vez, estabelecem as restrições e os atributos de qualidade que a solução deve satisfazer -- desempenho, usabilidade, confiabilidade e manutenibilidade --, sendo tão determinantes quanto os funcionais para que o sistema se ajuste ao fluxo de trabalho do pesquisador \cite{sommerville_software_2016}. O produto dessa atividade é o documento de especificação de requisitos, referência para o desenvolvimento do sistema.
 
 A avaliação de tais soluções, por sua vez, apoia-se nos construtos de eficácia e eficiência definidos pela norma ISO 9241-11 \cite{iso9241_11_2018}, complementados pela mensuração da carga de trabalho mental exigida do usuário por meio do \textit{NASA Task Load Index} (NASA-TLX), instrumento que avalia a demanda percebida em seis subescalas: demanda mental, demanda física, demanda temporal, desempenho, esforço e frustração \cite{hart_development_1988}. A aplicação conjunta desses instrumentos permite verificar se um sistema cumpre a tarefa a que se propõe e, também, se o faz reduzindo o esforço cognitivo exigido do pesquisador em relação ao método atualmente empregado.
 
@@ -209,43 +203,51 @@ O trabalho proposto tem por objetivo geral o desenvolvimento de um sistema para 
 \item Levantar requisitos funcionais e não funcionais para desenvolvimento do sistema;
 \item Coletar dados de eficiência dos métodos de triagem e identificação de táxons antes do uso do sistema;
 \item Desenvolver um sistema para registro de comunidades ecológicas marinhas e estuarinas;
-\item Coletar dados de eficiência dos métodos de triagem e identificação de táxons durante o uso do sistema.
+\item Coletar dados de eficiência dos métodos de triagem e identificação de táxons durante o uso do sistema;
+\item Comparar os dados coletados.
 \end{itemize}
 
 \section{METODOLOGIA}
-Quanto à natureza, esta pesquisa é aplicada, pois visa gerar conhecimento dirigido à solução de um problema prático: agilizar o registro e a triagem taxonômica de comunidades ecológicas marinhas e estuarinas. Quanto aos objetivos, é exploratória -- ao buscar maior familiaridade com o problema por meio de entrevistas -- e descritiva -- ao comparar o desempenho dos métodos de triagem e identificação antes e depois da intervenção. Quanto aos procedimentos, trata-se de um estudo de campo com métodos mistos, que combina a análise qualitativa das entrevistas semiestruturadas com medições quantitativas de desempenho e de carga de trabalho mental, realizadas em pré-teste e pós-teste, conduzidas sob o referencial da Interação Humano-Computador (IHC) \cite{silva_interacao_2010}.
+Quanto à natureza, esta pesquisa é aplicada, pois visa gerar conhecimento dirigido à solução de um problema prático: agilizar o registro e a triagem taxonômica de comunidades ecológicas marinhas e estuarinas. Quanto aos objetivos, é exploratória -- ao buscar maior familiaridade com o problema por meio de entrevistas -- e descritiva -- ao comparar o desempenho dos métodos de triagem e identificação antes e depois da intervenção. Quanto aos procedimentos, trata-se de um estudo de campo com métodos mistos, que combina a análise qualitativa das entrevistas semiestruturadas com medições quantitativas de desempenho e de carga de trabalho mental, realizadas em pré-teste e pós-teste, conduzidas sob o referencial da IHC.
 
-Operacionalmente, a pesquisa segue o processo iterativo do \textit{Design Thinking} \cite{brown_design_2021}, cuja estrutura -- empatia, definição, ideação, prototipação e teste -- organiza as oito etapas descritas a seguir.
+Operacionalmente, a pesquisa segue o processo iterativo do DT, cuja estrutura -- empatia, definição, ideação, prototipação e teste -- organiza as oito etapas descritas a seguir.
 
 Na etapa de empatia, serão realizadas entrevistas semiestruturadas com pesquisadores de grupos de pesquisa que atuam no registro de comunidades ecológicas marinhas e estuarinas, selecionados por amostragem de conveniência. A participação será voluntária, mediante assinatura de Termo de Consentimento Livre e Esclarecido, com garantia de anonimato na análise dos relatos. O objetivo é compreender o fluxo de trabalho atual de coleta, triagem e identificação de táxons, abordando tanto o manuseio das amostras quanto a inclusão dos dados em planilhas até a análise desses dados. As entrevistas serão gravadas e transcritas, e as transcrições serão submetidas a análise temática: após a familiarização com os dados, gera-se um conjunto de códigos, a partir dos quais se constroem, revisam e definem os temas centrais. O produto desta etapa é um relatório de contexto organizado por temas, que mapeia as tarefas, as ferramentas e as dificuldades do método manual.
 
-Em seguida, na etapa de definição, a análise temática conduzida anteriormente orienta a criação de personas e a construção de um mapa de empatia, técnicas de representação do usuário apresentadas na introdução. A partir dessas evidências, formula-se o Point of View (POV) -- síntese do problema, combinando a necessidade do usuário, o insight observado e o critério de sucesso. O produto desta etapa é o conjunto de artefatos de definição -- personas, mapa de empatia e POV --, que direciona a ideação de soluções.
+Em seguida, na etapa de definição, a análise temática conduzida anteriormente orienta a criação de personas e a construção de um mapa de empatia, técnicas de representação do usuário apresentadas na introdução. A partir dessas evidências, formula-se o POV. O produto desta etapa é o conjunto de artefatos de definição -- personas, mapa de empatia e POV, que direciona a ideação de soluções.
 
 Antes do desenvolvimento, registra-se a linha de base (pré-teste): o desempenho com o método manual atual é medido a partir da execução, pelos mesmos pesquisadores, das mesmas tarefas de triagem e identificação de táxons, avaliando-se o tempo despendido por tarefa, a taxa de acerto na identificação e a carga de trabalho mental por meio do NASA-TLX. O produto desta etapa é o conjunto de dados de linha de base, que servirá de referência para a comparação posterior.
 
 Na etapa de ideação, com base nos artefatos de definição, geram-se alternativas de solução para o registro e a triagem taxonômica, avaliadas junto aos participantes quanto à aderência ao fluxo de trabalho observado. O produto desta etapa é a alternativa de solução selecionada, com o escopo funcional inicial do sistema.
 
-A partir da alternativa selecionada, procede-se à definição de requisitos, consolidando os requisitos funcionais e não funcionais do sistema mediante técnicas de engenharia de requisitos: levantamento, análise, priorização e especificação. O produto desta etapa é o documento de requisitos, que delimita o escopo da funcionalidade de triagem taxonômica a ser desenvolvida.
+A partir da alternativa selecionada, procede-se à definição de requisitos, consolidando os requisitos funcionais e não funcionais do sistema mediante técnicas de engenharia de requisitos. O produto desta etapa é o documento de requisitos, que delimita o escopo da funcionalidade de triagem e análise de ocorrências taxonômicas a ser desenvolvida.
 
-Segue-se a prototipação, na qual a alternativa é desenvolvida de forma incremental, seguindo práticas de engenharia de software -- especificação, implementação iterativa e verificação --, com protótipos parciais testados junto aos participantes e ajustes incorporados conforme identificados. O produto desta etapa é a versão estável do sistema, pronta para a avaliação formal.
+Segue-se a prototipação, na qual a alternativa é desenvolvida de forma incremental, com protótipos parciais testados junto aos participantes e ajustes incorporados conforme identificados. O produto desta etapa é a versão estável do sistema, pronta para a avaliação formal.
 
-No pós-teste, os mesmos pesquisadores executam novamente as mesmas tarefas de triagem e identificação de táxons, agora utilizando o sistema desenvolvido. Medem-se a eficácia e a eficiência do uso, segundo os construtos da ISO 9241-11, e a carga de trabalho mental por meio do NASA-TLX, em condições equivalentes às da linha de base. O produto desta etapa é o conjunto de dados de pós-teste, comparável ponto a ponto com os dados de pré-teste.
+No pós-teste, os mesmos pesquisadores executam novamente as mesmas tarefas de triagem e identificação de táxons, agora utilizando o sistema desenvolvido. Medem-se a eficácia e a eficiência do uso, conforme definido pela ISO 9241-11, e a carga de trabalho mental por meio do NASA-TLX, em condições equivalentes às da linha de base. O produto desta etapa é o conjunto de dados de pós-teste, comparável ponto a ponto com os dados de pré-teste.
 
 Por fim, na etapa de análise dos resultados, os dados obtidos antes e depois da intervenção são comparados por meio de estatística descritiva e de testes de comparação de amostras pareadas -- teste \textit{t} de Student pareado ou teste de Wilcoxon, conforme a distribuição verificada por teste de normalidade --, de modo a avaliar a significância estatística das diferenças observadas no tempo de tarefa, na taxa de acerto e na carga de trabalho mental. O produto desta etapa é a análise que confronta os resultados com os objetivos específicos da pesquisa.
 
 
 \section{CRONOGRAMA}
-A fazer
+O cronograma de atividades está apresentado no Quadro \ref{quadro_cronograma}, distribuído ao longo dos quatro semestres previstos para a conclusão do mestrado, entre os períodos de 2027.1 e 2028.2, e organizado segundo as etapas descritas na metodologia.
+
 \begin{quadro}
-\caption{\label{quadro_exemplo}Cronograma de atividades}
-\begin{tabular}{|c|c|c|c|c|}
+\caption{\label{quadro_cronograma}Cronograma de atividades}
+\begin{tabular}{|p{7cm}|c|c|c|c|}
 	\hline
   \textbf{Atividade} & \textbf{2027.1} & \textbf{2027.2} & \textbf{2028.1} & \textbf{2028.2} \\ \hline
-	...    & ...   & ...  & ...  & ... \\ \hline
-	...    & ...   & ...  & ...  & ... \\ \hline
-	...    & ...   & ...  & ...  & ... \\ \hline
-	...    & ...   & ...  & ...  & ... \\ \hline
-	...    & ...   & ...  & ...  & ... \\ \hline
+	Revisão bibliográfica & X & X & X &  \\ \hline
+	Entrevistas semiestruturadas (empatia) & X & & & \\ \hline
+	Construção de personas, mapa de empatia e POV (definição) & X & & & \\ \hline
+	Coleta da linha de base (pré-teste) & X & & & \\ \hline
+	Ideação de alternativas de solução & X & X & & \\ \hline
+	Levantamento de requisitos & & X & & \\ \hline
+	Prototipação incremental do sistema & & X & X & \\ \hline
+	Coleta de dados de pós-teste & & & X & \\ \hline
+	Análise estatística dos resultados & & & X & X \\ \hline
+  Submissão de artigo científico & & & & X \\ \hline
+	Defesa da dissertação & & & & X \\ \hline
 \end{tabular}
 \fonte{Autor.}
 \end{quadro}
