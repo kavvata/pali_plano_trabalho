@@ -42,12 +42,36 @@
 \renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
 
 % ---
-% Cabecalhos: apenas o número da página, sem o risco separador
-% (baseado no estilo do abntex2, removendo o marcador de capítulo/seção)
+% Cabecalho institucional (adaptado do Anexo do Edital 013/2026)
 % ---
-\makeevenhead{abntheadings}{\ABNTEXfontereduzida\thepage}{}{}
-\makeoddhead{abntheadings}{}{}{\ABNTEXfontereduzida\thepage}
-\makeheadrule{abntheadings}{0pt}{0pt} % remove o risco abaixo do cabeçalho
+\setlength{\headheight}{2.6cm}
+\setlength{\headsep}{0.25cm}
+
+% minipage [b]: linha do texto na base, sem pendurar o bloco abaixo da linha
+% \centering faz cada linha virar parágrafo separado, logo \parskip=0 e
+% \baselineskip explicitos (fontspec usa 1,5x o tamanho da fonte por padrão)
+\newcommand{\unesparheader}{%
+\begin{tabular*}{\textwidth}{@{}c@{\extracolsep{\fill}}c@{\extracolsep{\fill}}c@{}}
+\includegraphics[height=2.4cm]{header/logo_left.png} &
+\begin{minipage}[b]{10.6cm}\centering\parskip=0pt\relax
+\normalsize\bfseries\baselineskip=13pt\relax UNIVERSIDADE ESTADUAL DO PARANÁ\\
+\textit{Campus} de Paranaguá\\
+\scriptsize\baselineskip=9.5pt\relax
+Credenciada pelo Decreto nº 9538, de 05/12/2013 -- DOE 05/12/2013\\
+Recredenciada pelo Decreto nº 2374. De 14/08/2019 -- DOE 18/08/2019\\
+Rua Comendador Correa Júnior, nº 117 -- Centro -- Paranaguá/PR.\\
+CEP 83203-560 | Fone (41) 3423-6644 | https://paranagua.unespar.edu.br
+\end{minipage} &
+\includegraphics[height=2.4cm]{header/logo_right.png}\\
+\end{tabular*}}
+
+\makeoddhead{abntheadings}{}{\unesparheader}{}
+\makeevenhead{abntheadings}{}{\unesparheader}{}
+\makeheadrule{abntheadings}{\textwidth}{0.5pt}
+
+% Páginas de início de capítulo/bibliografia: mesmo cabeçalho institucional
+\makeoddhead{abntchapfirst}{}{\unesparheader}{}
+\makeheadrule{abntchapfirst}{\textwidth}{0.5pt}
 
 % ---
 % Pacotes de citações
@@ -153,7 +177,13 @@
 
 \textual
 
-\chapter{PLANO DE TRABALHO}
+\chapter*{ANEXO III -- PLANO DE TRABALHO}
+% \chapter* não incrementa o contador; restaura para as seções ficarem 1.1, 1.2...
+\setcounter{chapter}{1}
+
+\begin{center}
+\textbf{Mestrado em Ambientes Litorâneos e Insulares, PALI - Turma 2027}
+\end{center}
 
 \noindent \textbf{Título da pesquisa}: \imprimirtitulo
 
