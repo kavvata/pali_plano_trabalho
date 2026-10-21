@@ -46,6 +46,10 @@
 % ---
 \setlength{\headheight}{2.6cm}
 \setlength{\headsep}{0.25cm}
+% recalcula o layout com o cabeçalho novo: bloco de texto a 3cm do topo e 2cm da base (NBR 14724);
+% [fixed] evita o arredondamento do textheight, que roubaria ~5pt da margem inferior
+\setulmarginsandblock{3cm}{2cm}{*}
+\checkandfixthelayout[fixed]
 
 % minipage [b]: linha do texto na base, sem pendurar o bloco abaixo da linha
 % \centering faz cada linha virar parágrafo separado, logo \parskip=0 e
